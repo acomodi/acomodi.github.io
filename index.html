@@ -1,1 +1,3167 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FPGA tool perf results: index</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+
+    <div id="home" class="w3-content">
+      <div id="header" class="w3-container w3-center w3-padding">
+        <h1>FPGA Tool Perf results</h1>
+      </div>
+
+      <div id="overview" class="w3-container w3-center">
+        <p>Click on a project to jump to the graph visualization.</p>
+      </div>
+
+      <div class="w3-dropdown-hover w3-center" style="width: 100%">
+        <button class="w3-button w3-border" style="width: 100%">Projects</button>
+        <div class="w3-dropdown-content w3-bar-block w3-border" style="width: 100%">
+        
+          <a href="graphs/axi-lite-reg.html" class="w3-bar-item w3-button w3-center"><b>axi-lite-reg</b></a>
+        
+          <a href="graphs/oneblink.html" class="w3-bar-item w3-button w3-center"><b>oneblink</b></a>
+        
+          <a href="graphs/picorv32.html" class="w3-bar-item w3-button w3-center"><b>picorv32</b></a>
+        
+          <a href="graphs/picosoc-simpleuart.html" class="w3-bar-item w3-button w3-center"><b>picosoc-simpleuart</b></a>
+        
+          <a href="graphs/picosoc-spimemio.html" class="w3-bar-item w3-button w3-center"><b>picosoc-spimemio</b></a>
+        
+          <a href="graphs/vexriscv.html" class="w3-bar-item w3-button w3-center"><b>vexriscv</b></a>
+        
+          <a href="graphs/zynq-ps7-counter.html" class="w3-bar-item w3-button w3-center"><b>zynq-ps7-counter</b></a>
+        
+        </div>
+      </div>
+      </br>
+      </br>
+      <div id="overview" class="w3-container w3-center">
+        <p>Click on a device to select it.</p>
+      </div>
+      <div class="w3-dropdown-hover w3-center" style="width: 100%">
+        <button class="w3-button w3-border" style="width: 100%">Devices</button>
+        <div class="w3-dropdown-content w3-bar-block w3-border" style="width: 100%">
+        
+          <div id="EOS-QL-EOS-S3">
+            <button id="EOS-QL-EOS-S3-button" class="w3-button w3-block w3-center" onclick="selectTable('EOS-QL-EOS-S3')">
+              <b>EOS-QL-EOS-S3</b>
+            </button>
+          </div>
+        
+          <div id="ICE40-LP8K">
+            <button id="ICE40-LP8K-button" class="w3-button w3-block w3-center" onclick="selectTable('ICE40-LP8K')">
+              <b>ICE40-LP8K</b>
+            </button>
+          </div>
+        
+          <div id="ICE40-UP5K">
+            <button id="ICE40-UP5K-button" class="w3-button w3-block w3-center" onclick="selectTable('ICE40-UP5K')">
+              <b>ICE40-UP5K</b>
+            </button>
+          </div>
+        
+          <div id="NEXUS-LIFCL-40-9BG400CES">
+            <button id="NEXUS-LIFCL-40-9BG400CES-button" class="w3-button w3-block w3-center" onclick="selectTable('NEXUS-LIFCL-40-9BG400CES')">
+              <b>NEXUS-LIFCL-40-9BG400CES</b>
+            </button>
+          </div>
+        
+          <div id="XC7-A100T">
+            <button id="XC7-A100T-button" class="w3-button w3-block w3-center" onclick="selectTable('XC7-A100T')">
+              <b>XC7-A100T</b>
+            </button>
+          </div>
+        
+          <div id="XC7-A200T">
+            <button id="XC7-A200T-button" class="w3-button w3-block w3-center" onclick="selectTable('XC7-A200T')">
+              <b>XC7-A200T</b>
+            </button>
+          </div>
+        
+          <div id="XC7-A35T">
+            <button id="XC7-A35T-button" class="w3-button w3-block w3-center" onclick="selectTable('XC7-A35T')">
+              <b>XC7-A35T</b>
+            </button>
+          </div>
+        
+          <div id="XC7-Z010">
+            <button id="XC7-Z010-button" class="w3-button w3-block w3-center" onclick="selectTable('XC7-Z010')">
+              <b>XC7-Z010</b>
+            </button>
+          </div>
+        
+        </div>
+      </div>
+
+      <div id="overview" class="w3-container w3-center">
+        <p>To check the latest statistics, click on a project name.</p>
+      </div>
+      <div>
+        
+          <div id="XC7-A100T-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-fpga-interchange </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> vivado </th>
+  
+    <th class="w3-center w3-border"> vpr </th>
+  
+    <th class="w3-center w3-border"> vpr-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado-uhdm </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/baselitex_XC7-A100T.html">baselitex</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/blinky_XC7-A100T.html">blinky</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/ibex_XC7-A100T.html">ibex</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_XC7-A100T.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picorv32_XC7-A100T.html">picorv32</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_XC7-A100T.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_XC7-A100T.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv_XC7-A100T.html">vexriscv</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv-smp_XC7-A100T.html">vexriscv-smp</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="XC7-A35T-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-fpga-interchange </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> vivado </th>
+  
+    <th class="w3-center w3-border"> vpr </th>
+  
+    <th class="w3-center w3-border"> vpr-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado-uhdm </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/baselitex_XC7-A35T.html">baselitex</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/blinky_XC7-A35T.html">blinky</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n1_XC7-A35T.html">bram-n1</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n2_XC7-A35T.html">bram-n2</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n3_XC7-A35T.html">bram-n3</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/dram-test-64x1d_XC7-A35T.html">dram-test-64x1d</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/ibex_XC7-A35T.html">ibex</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/murax_XC7-A35T.html">murax</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_XC7-A35T.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picorv32_XC7-A35T.html">picorv32</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc_XC7-A35T.html">picosoc</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_XC7-A35T.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_XC7-A35T.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv_XC7-A35T.html">vexriscv</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv-smp_XC7-A35T.html">vexriscv-smp</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="EOS-QL-EOS-S3-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> quicklogic </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/iir_EOS-QL-EOS-S3.html">iir</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/jpeg-qnr_EOS-QL-EOS-S3.html">jpeg-qnr</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_EOS-QL-EOS-S3.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_EOS-QL-EOS-S3.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_EOS-QL-EOS-S3.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/rsdecoder_EOS-QL-EOS-S3.html">rsdecoder</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="ICE40-UP5K-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-ice40 </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_ICE40-UP5K.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picorv32_ICE40-UP5K.html">picorv32</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_ICE40-UP5K.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_ICE40-UP5K.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/up5k-nes_ICE40-UP5K.html">up5k-nes</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="NEXUS-LIFCL-40-9BG400CES-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-nexus </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_NEXUS-LIFCL-40-9BG400CES.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="XC7-A200T-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-fpga-interchange </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> vivado </th>
+  
+    <th class="w3-center w3-border"> vpr </th>
+  
+    <th class="w3-center w3-border"> vpr-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado-uhdm </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/baselitex-nexys-video_XC7-A200T.html">baselitex-nexys-video</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n1_XC7-A200T.html">bram-n1</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n2_XC7-A200T.html">bram-n2</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/bram-n3_XC7-A200T.html">bram-n3</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/daisho-usb3_XC7-A200T.html">daisho-usb3</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/dram-test-64x1d_XC7-A200T.html">dram-test-64x1d</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/hamsternz-displayport_XC7-A200T.html">hamsternz-displayport</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/hamsternz-hdmi_XC7-A200T.html">hamsternz-hdmi</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/ibex_XC7-A200T.html">ibex</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/murax_XC7-A200T.html">murax</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_XC7-A200T.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_XC7-A200T.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_XC7-A200T.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv_XC7-A200T.html">vexriscv</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="ICE40-LP8K-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-ice40 </th>
+  
+  </tr>
+  
+</table>
+          </div>
+        
+          <div id="XC7-Z010-table" class="device-table w3-container w3-hide w3-padding-16">
+            <table class="w3-table-all">
+  <tr class="w3-gray">
+    <th class="w3-center w3-border">Project</th>
+  
+    <th class="w3-center w3-border"> nextpnr-fpga-interchange </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx </th>
+  
+    <th class="w3-center w3-border"> nextpnr-xilinx-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> vivado </th>
+  
+    <th class="w3-center w3-border"> vpr </th>
+  
+    <th class="w3-center w3-border"> vpr-fasm2bels </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado </th>
+  
+    <th class="w3-center w3-border"> yosys-vivado-uhdm </th>
+  
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/axi-lite-reg_XC7-Z010.html">axi-lite-reg</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/oneblink_XC7-Z010.html">oneblink</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picorv32_XC7-Z010.html">picorv32</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-simpleuart_XC7-Z010.html">picosoc-simpleuart</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/picosoc-spimemio_XC7-Z010.html">picosoc-spimemio</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/vexriscv_XC7-Z010.html">vexriscv</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: orange">
+            Skipped
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+  <tr>
+    <th>
+    
+      <a href="stats/zynq-ps7-counter_XC7-Z010.html">zynq-ps7-counter</a>
+    
+    </th>
+      
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border failed" style="color: red">
+            Failed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+        
+          <th class="w3-center w3-border passed" style="color: green">
+            Passed
+          </th>
+        
+    
+  </tr>
+  
+</table>
+          </div>
+        
+      </div>
+    </div>
+  </body>
+
+<script charset="utf-8">
+
+// sets visibility of an element with the w3-hide class by appending/removing w3-show class
+function setVisibility(elem, on) {
+  if (on) {
+    if (elem.className.indexOf("w3-show") == -1) {
+      elem.className += " w3-show";
+    }
+  } else {
+    elem.className = elem.className.replace(" w3-show", "");
+  }
+}
+
+function toggleVisibility(id) {
+  var elem = document.getElementById(id);
+  setVisibility(elem, elem.className.indexOf("w3-show") == -1);
+}
+
+function selectTable(device_name) {
+  var table_id = device_name + "-table";
+  var button_id = device_name + "-button";
+
+  var tables = document.getElementsByClassName("device-table");
+  for (var i = tables.length - 1; i >= 0; i--) {
+    setVisibility(tables[i], tables[i].id == table_id);
+  }
+
+  var buttons = document.getElementsByClassName("device-button");
+  for (var i = buttons.length - 1; i >= 0; i--) {
+    if (buttons[i].id == button_id) {
+      buttons[i].className = buttons[i].className.replace(" w3-gray", "");
+      buttons[i].className = buttons[i].className.replace(" w3-light-gray", "");
+      buttons[i].className += " w3-gray";
+    } else {
+      buttons[i].className = buttons[i].className.replace(" w3-gray", "");
+      buttons[i].className = buttons[i].className.replace(" w3-light-gray", "");
+      buttons[i].className += " w3-light-gray";
+    }
+  }
+}
+
+// select first table on start
+selectTable("EOS-QL-EOS-S3");
+
+</script>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>zynq-ps7-counter ZYBO</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <div id="header" class="w3-container w3-center w3-padding">
+      <h1>zynq-ps7-counter ZYBO</h1>
+    </div>
+
+    <div id="header" class="w3-container w3-center w3-padding">
+      <h3>2021-09-30T07:46:33</h3>
+    </div>
+
+    <div id="header" class="w3-container w3-center w3-padding">
+      <a href="../index.html">Return to index</a>
+    </div>
+
+    <div class="w3-container w3-content" style="max-width: 75%">
+      <table id="table-id" class="w3-table-all" style="display: content">
+        <tr class="w3-gray">
+          <th class="w3-border">Tool</th>
+          <th class="w3-border">Version</th>
+        </tr>
+    
+        <tr>
+          <th class="w3-border">nextpnr-nextpnr-xilinx</th>
+          <th class="w3-border">nextpnr-xilinx -- Next Generation Place and Route (Version v0.0-2840-g86500ec6)</th>
+        </tr>
+    
+        <tr>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">Yosys 0.10+1 (git sha1 62739f7b)</th>
+        </tr>
+    
+        <tr>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border">unknown</th>
+        </tr>
+    
+        <tr>
+          <th class="w3-border">vpr</th>
+          <th class="w3-border">Version: 8.1.0-dev+7554512c9, Revision: 8.0.0-4647-g7554512c9</th>
+        </tr>
+    
+        <tr>
+          <th class="w3-border">nextpnr-nextpnr-fpga_interchange</th>
+          <th class="w3-border">nextpnr-fpga_interchange -- Next Generation Place and Route (Version v0.0-3787-g67bd349e)</th>
+        </tr>
+    
+      </table>
+    </div>
+
+    <div class="w3-container w3-content" style="max-width: 75%">
+      <table id="table-id" class="w3-table-all" style="display: content">
+        <tr class="w3-gray">
+          <th class="w3-border">Toolchain</th>
+          <th class="w3-border">Synth</th>
+          <th class="w3-border">PnR</th>
+          <th class="w3-border">Passes</th>
+          <th class="w3-border">Meets timing</th>
+          <th class="w3-border">Fasm2Bels</th>
+          <th class="w3-border">Total Runtime (s)</th>
+          <th class="w3-border">Memory Usage (MB)</th>
+    
+          <th class="w3-center w3-border">LUT</th>
+    
+          <th class="w3-center w3-border">DFF</th>
+    
+          <th class="w3-center w3-border">CARRY</th>
+    
+          <th class="w3-center w3-border">PLL</th>
+    
+          <th class="w3-center w3-border">GLB</th>
+    
+        </tr>
+    
+        <tr>
+          <th class="w3-border">nextpnr-xilinx</th>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">nextpnr</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: red">False</th>
+          <th class="w3-border" style="color: black">17.343</th>
+          <th class="w3-border" style="color: grey">N/A</th>
+      
+          <th class="w3-border" style="color: black">52</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+        <tr>
+          <th class="w3-border">yosys-vivado</th>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: black">51.26</th>
+          <th class="w3-border" style="color: black">2186.58</th>
+      
+          <th class="w3-border" style="color: black">55</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">7</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+        <tr>
+          <th class="w3-border">vpr</th>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">vpr</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: red">None</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: black">642.136</th>
+          <th class="w3-border" style="color: black">2257.20</th>
+      
+          <th class="w3-border" style="color: black">55</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">7</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+        <tr>
+          <th class="w3-border">yosys-vivado-uhdm</th>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: black">54.87</th>
+          <th class="w3-border" style="color: black">2187.55</th>
+      
+          <th class="w3-border" style="color: black">55</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">7</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+        <tr>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border">vivado</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: black">228.572</th>
+          <th class="w3-border" style="color: black">2178.03</th>
+      
+          <th class="w3-border" style="color: black">29</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">7</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+        <tr>
+          <th class="w3-border">nextpnr-fpga-interchange</th>
+          <th class="w3-border">yosys</th>
+          <th class="w3-border">nextpnr</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: green">True</th>
+          <th class="w3-border" style="color: black">3389.378</th>
+          <th class="w3-border" style="color: grey">N/A</th>
+      
+          <th class="w3-border" style="color: black">55</th>
+      
+          <th class="w3-border" style="color: black">28</th>
+      
+          <th class="w3-border" style="color: black">7</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+          <th class="w3-border" style="color: black">0</th>
+      
+        </tr>
+    
+      </table>
+    </div>
+  </body>
+
+</html>
